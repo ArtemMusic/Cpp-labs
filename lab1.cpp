@@ -107,8 +107,8 @@ class Complex{
     public:
         float real[2],im[2];
 
-   //Конструктор по умолчанию
-   Complex(){
+    //Конструктор по умолчанию
+    Complex(){
         cout<<"Введите действительную часть комплексного числа: ";
         cin >> real[0];
         cout<<"Введите мнимую часть комплексного числа: ";
@@ -141,22 +141,31 @@ class Complex{
    
     int summ (float*real,float*im){
         cout<<"Сумма введенных чисел = "<< real[0]+real[1]<<"+("<<(im[0]+im[1])<<")i"<<endl;
+        cout<<"--Модуль суммы введенных чисел = " << (sqrt((pow(real[0]+real[1],2))+(pow(im[0]+im[1],2)))) << endl;
         return 0;
     }
    
     int dif (float*real,float*im){
        cout<<"Разность введенных чисел = "<< real[0]-real[1]<<"+("<<(im[0]-im[1])<<")i"<<endl;
+       cout<<"--Модуль разности введенных чисел = " << (sqrt((pow(real[0]-real[1],2))+(pow(real[0]-real[1],2)))) << endl;
        return 0;
     }
    
     int mult (float*real,float*im){
-       cout<<"Произведение введенных чисел = "<< (real[0]*real[1]-im[0]*im[1])<<"+("<<im[0]*real[1]+real[0]*im[1]<<")i"<<endl;
+        cout<<"Произведение введенных чисел = "<< (real[0]*real[1]-im[0]*im[1])<<"+("<<im[0]*real[1]+real[0]*im[1]<<")i"<<endl;
+        cout<<"--Модуль произведения произведения чисел = " << (sqrt((pow(real[0]*real[1],2))+(pow(real[0]*real[1],2)))) << endl;
        return 0;
     }
 
     int div (float*real,float*im){
-       cout<<"Частное введенных чисел = "<< (real[0]*real[1]+im[0]*im[1])/(real[1]*real[1]+im[1]*im[1])<<"+("<<(im[0]*real[1]-real[0]*im[1])/(real[1]*real[1]+im[1]*im[1])<<")i"<<endl;
+        cout<<"Частное введенных чисел = "<< (real[0]*real[1]+im[0]*im[1])/(real[1]*real[1]+im[1]*im[1])<<"+("<<(im[0]*real[1]-real[0]*im[1])/(real[1]*real[1]+im[1]*im[1])<<")i"<<endl;
+        cout<<"--Модуль частного введенных чисел = " << (sqrt((pow((real[0]*real[1]+im[0]*im[1])/(real[1]*real[1]+im[1]*im[1]),2))+(pow((im[0]*real[1]-real[0]*im[1])/(real[1]*real[1]+im[1]*im[1]),2)))) << endl;
        return 0;
+    }
+
+    int mod_result (float*real,float*im) {
+        cout<<"Разность модулей введенных чисел = "<< (sqrt((pow(real[0],2))+(pow(im[0],2)))) - (sqrt((pow(real[1],2))+(pow(im[1],2)))) << endl;
+        return 0;
     }
 
     //Диструктор
